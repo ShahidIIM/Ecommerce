@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids</title>
+
+    
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:20px;
+        }
+        h1{
+            text-align: center;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <button class="but">
+        <a href="cart.html">My Cart</a>
+    </button>
+    <h1>Kids</h1>
+    <div id="container"></div>
+</body>
+<script>
+    var kidsData =[
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17607466/2022/3/22/298e6bb0-4577-467d-b107-1e2e32c38b141647945917112Cottonjerseytop1.jpg",
+            name:"H&M Girls Black Cotton Jersey Top",
+            price: 399,
+            strikedoffprice: 2799,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17268490/2022/2/24/4d100471-c3e1-416f-9146-0a66cf60f20a1645697471243Collaredjerseytop1.jpg",
+            name: "H&M Collored Jersey Top",
+            price: 699,
+            strikedoffprice: 1999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17674674/2022/3/29/832d50ee-3c15-4412-9905-5b1194aef4431648559094213Croppedprintedjerseytop1.jpg",
+            name:"H&M Girls Cropped Printed Top",
+            price: 499,
+            strikedoffprice: 1879,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15460316/2021/9/14/206dec9b-8cfc-4fe5-a106-7cd567da234c1631609632258maxNavyBlueFloralRegularTop1.jpg",
+            name:"Max Girls Regular Top",
+            price: 499,
+            strikedoffprice: 1769,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/4/30/effb07bd-749a-45c0-93d6-41ef9ae51ef61619784198426-1.jpg",
+            name:"Stylo Bug Georgette Tiered Top",
+            price: 449,
+            strikedoffprice:1599,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14803432/2022/4/1/a7495c79-1c87-4591-a4dd-99798b9344131648794852288-YK-Boys-Navy-Blue-Light-Fade-Clean-Look-Stretchable-Joggers--1.jpg",
+            name:"YK Boys Strechable Joggers",
+            price: 639,
+            strikedoffprice:1999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17038870/2022/3/4/05d591b9-b201-4067-bd29-0c0a254d5e961646380101332-US-Polo-Assn-Kids-Boys-Jeans-5061646380100669-1.jpg",
+            name:"US Polo Assn. Boys Jeans",
+            price: 1699,
+            strikedoffprice:2869,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17137550/2022/2/11/b124b0f4-830d-44ed-a669-e8585d66cf4f1644579708683HellcatBoysRoundNeckBlendedCottonTshirt-ComboPackof51.jpg",
+            name:"HELLCAT Boys Pack of 5 Printed T-Shirt",
+            price:949,
+            strikedoffprice:4995,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17607444/2022/3/22/67fe62d7-5324-48da-b96e-76ef16c69cde1647945878876PrintedT-shirt1.jpg",
+            name:"H&M Boys Round Neck T-Shirt",
+            price: 399,
+            strikedoffprice:799,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17038574/2022/3/7/8e091a99-2866-458d-906a-4d7f728bd1861646659569790-US-Polo-Assn-Kids-Boys-Shirts-1031646659569553-1.jpg",
+            name:"US Polo Assn. Kids Boys Printed Cotton Shirt",
+            price: 1499,
+            strikedoffprice: 2589,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13529924/2021/7/1/929a7a5a-8524-4d18-913b-e875426709ff1625116631676NatileneGirlsMulticolouredRegularFitStripedCasualShirt1.jpg",
+            name:"Natilene Girls Regular Fit Casual Shirt",
+            price: 449,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14881430/2022/1/5/2ad439b0-0fd2-4511-a9a7-a1d068e2d79b1641373785437UTHbyRoadsterGirlsTealGreenSolidCasualShirt1.jpg",
+            name:"UTH By Roadster Girls Solid Casual Shirt",
+            price: 329,
+            strikedoffprice:1099,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14649700/2021/12/13/c526584f-91c1-4d1e-8ad9-4d30db90ad371639395067034-HRX-By-Hrithik-Roshan-U-17-Active-Girls-Jet-Black-Rapid-Dry--1.jpg",
+            name:"HRX By Hrithik Roshan Girls Active Tights",
+            price: 549,
+            strikedoffprice: 1699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17731472/2022/4/5/f38d191b-dc14-41b6-848a-7ba1611c855e1649130851625V-MartGirlsPackof2PrintedAnkle-LengthLeggings1.jpg",
+            name:"V-Mart Girls Printed Ankle Joggers",
+            price: 350,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15977346/2022/2/11/5c25a345-4fa2-4457-93fe-01fa1bd8054e1644573644509HouseofPataudiGirlsBlackWhiteFloralPrintedRegularRozanaKurta1.jpg",
+            name:"House of Pataudi Girls Printed Lehenga Choli",
+            price: 2399,
+            strikedoffprice:2999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16963260/2022/1/28/7a826d95-831a-421d-8ba6-0c42ca761f2d1643370688803SKYHEIGHTSGirlsMaroon1.jpg",
+            name:"SKY Heights Ready to Wear Lehenga Blouse",
+            price: 1224,
+            strikedoffprice:3499,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/5500201/2018/4/24/11524569424344-na-5221524569424114-1.jpg",
+            name:"Kids Kent Sneakers",
+            price: 1889,
+            strikedoffprice:2699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14957770/2022/2/21/7619c336-c328-4ad5-9654-77509a5ad8501645420270505-Skechers-Girls-Blue-Twinkle-Sparks---Unicorn-Charme-Sneakers-1.jpg",
+            name:"Skechers Girls Twinkle Sparks",
+            price: 2999,
+            strikedoffprice: 8599,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/4/2/8143562d-d760-40e7-9be8-2101ebcbb2db1617347945328-1.jpg",
+            name:"YUVRAJ BOys Single Breasted Blazer",
+            price: 1599,
+            strikedoffprice: 3999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16057088/2022/3/29/9bb0323b-32ef-4e77-9330-35ca9dd4beab1648554346362-United-Colors-of-Benetton-Girls-Red-Self-Striped-Pullover-wi-1.jpg",
+            name:"UCB Girls Pullover",
+            price: 944,
+            strikedoffprice:2099,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/11/14/1f832303-690f-41e7-9509-520ee389ece41605316976207-1.jpg",
+            name:"Decathlon Kids Sunglasses",
+            price: 949,
+            strikedoffprice:999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15755286/2021/10/6/bb654e41-e1ae-47fa-b539-53313cefb9ab1633525757589Caps1.jpg",
+            name:"Jack & Jones Boys Baseball Cap",
+            price: 559,
+            strikedoffprice:699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16863400/2022/1/18/e7af605f-7eeb-4bfe-aba2-206b99eaaffe1642490929622ToniqKidsWhiteBrownTwoToneBowStrawVacationBeachSummerHatForG1.jpg",
+            name:"Toniq Kids Girls Woven Sun Hat",
+            price: 679,
+            strikedoffprice:1699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17607466/2022/3/22/298e6bb0-4577-467d-b107-1e2e32c38b141647945917112Cottonjerseytop1.jpg",
+            name:"H&M Girls Black Cotton Jersey Top",
+            price: 399,
+            strikedoffprice: 2799,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17268490/2022/2/24/4d100471-c3e1-416f-9146-0a66cf60f20a1645697471243Collaredjerseytop1.jpg",
+            name: "H&M Collored Jersey Top",
+            price: 699,
+            strikedoffprice: 1999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17674674/2022/3/29/832d50ee-3c15-4412-9905-5b1194aef4431648559094213Croppedprintedjerseytop1.jpg",
+            name:"H&M Girls Cropped Printed Top",
+            price: 499,
+            strikedoffprice: 1879,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15460316/2021/9/14/206dec9b-8cfc-4fe5-a106-7cd567da234c1631609632258maxNavyBlueFloralRegularTop1.jpg",
+            name:"Max Girls Regular Top",
+            price: 499,
+            strikedoffprice: 1769,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/4/30/effb07bd-749a-45c0-93d6-41ef9ae51ef61619784198426-1.jpg",
+            name:"Stylo Bug Georgette Tiered Top",
+            price: 449,
+            strikedoffprice:1599,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14803432/2022/4/1/a7495c79-1c87-4591-a4dd-99798b9344131648794852288-YK-Boys-Navy-Blue-Light-Fade-Clean-Look-Stretchable-Joggers--1.jpg",
+            name:"YK Boys Strechable Joggers",
+            price: 639,
+            strikedoffprice:1999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17038870/2022/3/4/05d591b9-b201-4067-bd29-0c0a254d5e961646380101332-US-Polo-Assn-Kids-Boys-Jeans-5061646380100669-1.jpg",
+            name:"US Polo Assn. Boys Jeans",
+            price: 1699,
+            strikedoffprice:2869,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17137550/2022/2/11/b124b0f4-830d-44ed-a669-e8585d66cf4f1644579708683HellcatBoysRoundNeckBlendedCottonTshirt-ComboPackof51.jpg",
+            name:"HELLCAT Boys Pack of 5 Printed T-Shirt",
+            price:949,
+            strikedoffprice:4995,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17607444/2022/3/22/67fe62d7-5324-48da-b96e-76ef16c69cde1647945878876PrintedT-shirt1.jpg",
+            name:"H&M Boys Round Neck T-Shirt",
+            price: 399,
+            strikedoffprice:799,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17038574/2022/3/7/8e091a99-2866-458d-906a-4d7f728bd1861646659569790-US-Polo-Assn-Kids-Boys-Shirts-1031646659569553-1.jpg",
+            name:"US Polo Assn. Kids Boys Printed Cotton Shirt",
+            price: 1499,
+            strikedoffprice: 2589,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13529924/2021/7/1/929a7a5a-8524-4d18-913b-e875426709ff1625116631676NatileneGirlsMulticolouredRegularFitStripedCasualShirt1.jpg",
+            name:"Natilene Girls Regular Fit Casual Shirt",
+            price: 449,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14881430/2022/1/5/2ad439b0-0fd2-4511-a9a7-a1d068e2d79b1641373785437UTHbyRoadsterGirlsTealGreenSolidCasualShirt1.jpg",
+            name:"UTH By Roadster Girls Solid Casual Shirt",
+            price: 329,
+            strikedoffprice:1099,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14649700/2021/12/13/c526584f-91c1-4d1e-8ad9-4d30db90ad371639395067034-HRX-By-Hrithik-Roshan-U-17-Active-Girls-Jet-Black-Rapid-Dry--1.jpg",
+            name:"HRX By Hrithik Roshan Girls Active Tights",
+            price: 549,
+            strikedoffprice: 1699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17731472/2022/4/5/f38d191b-dc14-41b6-848a-7ba1611c855e1649130851625V-MartGirlsPackof2PrintedAnkle-LengthLeggings1.jpg",
+            name:"V-Mart Girls Printed Ankle Joggers",
+            price: 350,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15977346/2022/2/11/5c25a345-4fa2-4457-93fe-01fa1bd8054e1644573644509HouseofPataudiGirlsBlackWhiteFloralPrintedRegularRozanaKurta1.jpg",
+            name:"House of Pataudi Girls Printed Lehenga Choli",
+            price: 2399,
+            strikedoffprice:2999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16963260/2022/1/28/7a826d95-831a-421d-8ba6-0c42ca761f2d1643370688803SKYHEIGHTSGirlsMaroon1.jpg",
+            name:"SKY Heights Ready to Wear Lehenga Blouse",
+            price: 1224,
+            strikedoffprice:3499,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/5500201/2018/4/24/11524569424344-na-5221524569424114-1.jpg",
+            name:"Kids Kent Sneakers",
+            price: 1889,
+            strikedoffprice:2699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13529924/2021/7/1/929a7a5a-8524-4d18-913b-e875426709ff1625116631676NatileneGirlsMulticolouredRegularFitStripedCasualShirt1.jpg",
+            name:"Natilene Girls Regular Fit Casual Shirt",
+            price: 449,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14881430/2022/1/5/2ad439b0-0fd2-4511-a9a7-a1d068e2d79b1641373785437UTHbyRoadsterGirlsTealGreenSolidCasualShirt1.jpg",
+            name:"UTH By Roadster Girls Solid Casual Shirt",
+            price: 329,
+            strikedoffprice:1099,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14649700/2021/12/13/c526584f-91c1-4d1e-8ad9-4d30db90ad371639395067034-HRX-By-Hrithik-Roshan-U-17-Active-Girls-Jet-Black-Rapid-Dry--1.jpg",
+            name:"HRX By Hrithik Roshan Girls Active Tights",
+            price: 549,
+            strikedoffprice: 1699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17731472/2022/4/5/f38d191b-dc14-41b6-848a-7ba1611c855e1649130851625V-MartGirlsPackof2PrintedAnkle-LengthLeggings1.jpg",
+            name:"V-Mart Girls Printed Ankle Joggers",
+            price: 350,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15977346/2022/2/11/5c25a345-4fa2-4457-93fe-01fa1bd8054e1644573644509HouseofPataudiGirlsBlackWhiteFloralPrintedRegularRozanaKurta1.jpg",
+            name:"House of Pataudi Girls Printed Lehenga Choli",
+            price: 2399,
+            strikedoffprice:2999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16963260/2022/1/28/7a826d95-831a-421d-8ba6-0c42ca761f2d1643370688803SKYHEIGHTSGirlsMaroon1.jpg",
+            name:"SKY Heights Ready to Wear Lehenga Blouse",
+            price: 1224,
+            strikedoffprice:3499,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/5500201/2018/4/24/11524569424344-na-5221524569424114-1.jpg",
+            name:"Kids Kent Sneakers",
+            price: 1889,
+            strikedoffprice:2699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14957770/2022/2/21/7619c336-c328-4ad5-9654-77509a5ad8501645420270505-Skechers-Girls-Blue-Twinkle-Sparks---Unicorn-Charme-Sneakers-1.jpg",
+            name:"Skechers Girls Twinkle Sparks",
+            price: 2999,
+            strikedoffprice: 8599,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/4/2/8143562d-d760-40e7-9be8-2101ebcbb2db1617347945328-1.jpg",
+            name:"YUVRAJ BOys Single Breasted Blazer",
+            price: 1599,
+            strikedoffprice: 3999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16057088/2022/3/29/9bb0323b-32ef-4e77-9330-35ca9dd4beab1648554346362-United-Colors-of-Benetton-Girls-Red-Self-Striped-Pullover-wi-1.jpg",
+            name:"UCB Girls Pullover",
+            price: 944,
+            strikedoffprice:2099,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/11/14/1f832303-690f-41e7-9509-520ee389ece41605316976207-1.jpg",
+            name:"Decathlon Kids Sunglasses",
+            price: 949,
+            strikedoffprice:999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15755286/2021/10/6/bb654e41-e1ae-47fa-b539-53313cefb9ab1633525757589Caps1.jpg",
+            name:"Jack & Jones Boys Baseball Cap",
+            price: 559,
+            strikedoffprice:699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16863400/2022/1/18/e7af605f-7eeb-4bfe-aba2-206b99eaaffe1642490929622ToniqKidsWhiteBrownTwoToneBowStrawVacationBeachSummerHatForG1.jpg",
+            name:"Toniq Kids Girls Woven Sun Hat",
+            price: 679,
+            strikedoffprice:1699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17607466/2022/3/22/298e6bb0-4577-467d-b107-1e2e32c38b141647945917112Cottonjerseytop1.jpg",
+            name:"H&M Girls Black Cotton Jersey Top",
+            price: 399,
+            strikedoffprice: 2799,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17268490/2022/2/24/4d100471-c3e1-416f-9146-0a66cf60f20a1645697471243Collaredjerseytop1.jpg",
+            name: "H&M Collored Jersey Top",
+            price: 699,
+            strikedoffprice: 1999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17674674/2022/3/29/832d50ee-3c15-4412-9905-5b1194aef4431648559094213Croppedprintedjerseytop1.jpg",
+            name:"H&M Girls Cropped Printed Top",
+            price: 499,
+            strikedoffprice: 1879,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15460316/2021/9/14/206dec9b-8cfc-4fe5-a106-7cd567da234c1631609632258maxNavyBlueFloralRegularTop1.jpg",
+            name:"Max Girls Regular Top",
+            price: 499,
+            strikedoffprice: 1769,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/4/30/effb07bd-749a-45c0-93d6-41ef9ae51ef61619784198426-1.jpg",
+            name:"Stylo Bug Georgette Tiered Top",
+            price: 449,
+            strikedoffprice:1599,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14803432/2022/4/1/a7495c79-1c87-4591-a4dd-99798b9344131648794852288-YK-Boys-Navy-Blue-Light-Fade-Clean-Look-Stretchable-Joggers--1.jpg",
+            name:"YK Boys Strechable Joggers",
+            price: 639,
+            strikedoffprice:1999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17038870/2022/3/4/05d591b9-b201-4067-bd29-0c0a254d5e961646380101332-US-Polo-Assn-Kids-Boys-Jeans-5061646380100669-1.jpg",
+            name:"US Polo Assn. Boys Jeans",
+            price: 1699,
+            strikedoffprice:2869,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17137550/2022/2/11/b124b0f4-830d-44ed-a669-e8585d66cf4f1644579708683HellcatBoysRoundNeckBlendedCottonTshirt-ComboPackof51.jpg",
+            name:"HELLCAT Boys Pack of 5 Printed T-Shirt",
+            price:949,
+            strikedoffprice:4995,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17607444/2022/3/22/67fe62d7-5324-48da-b96e-76ef16c69cde1647945878876PrintedT-shirt1.jpg",
+            name:"H&M Boys Round Neck T-Shirt",
+            price: 399,
+            strikedoffprice:799,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17038574/2022/3/7/8e091a99-2866-458d-906a-4d7f728bd1861646659569790-US-Polo-Assn-Kids-Boys-Shirts-1031646659569553-1.jpg",
+            name:"US Polo Assn. Kids Boys Printed Cotton Shirt",
+            price: 1499,
+            strikedoffprice: 2589,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13529924/2021/7/1/929a7a5a-8524-4d18-913b-e875426709ff1625116631676NatileneGirlsMulticolouredRegularFitStripedCasualShirt1.jpg",
+            name:"Natilene Girls Regular Fit Casual Shirt",
+            price: 449,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14881430/2022/1/5/2ad439b0-0fd2-4511-a9a7-a1d068e2d79b1641373785437UTHbyRoadsterGirlsTealGreenSolidCasualShirt1.jpg",
+            name:"UTH By Roadster Girls Solid Casual Shirt",
+            price: 329,
+            strikedoffprice:1099,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14649700/2021/12/13/c526584f-91c1-4d1e-8ad9-4d30db90ad371639395067034-HRX-By-Hrithik-Roshan-U-17-Active-Girls-Jet-Black-Rapid-Dry--1.jpg",
+            name:"HRX By Hrithik Roshan Girls Active Tights",
+            price: 549,
+            strikedoffprice: 1699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17731472/2022/4/5/f38d191b-dc14-41b6-848a-7ba1611c855e1649130851625V-MartGirlsPackof2PrintedAnkle-LengthLeggings1.jpg",
+            name:"V-Mart Girls Printed Ankle Joggers",
+            price: 350,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15977346/2022/2/11/5c25a345-4fa2-4457-93fe-01fa1bd8054e1644573644509HouseofPataudiGirlsBlackWhiteFloralPrintedRegularRozanaKurta1.jpg",
+            name:"House of Pataudi Girls Printed Lehenga Choli",
+            price: 2399,
+            strikedoffprice:2999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17674674/2022/3/29/832d50ee-3c15-4412-9905-5b1194aef4431648559094213Croppedprintedjerseytop1.jpg",
+            name:"H&M Girls Cropped Printed Top",
+            price: 499,
+            strikedoffprice: 1879,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15460316/2021/9/14/206dec9b-8cfc-4fe5-a106-7cd567da234c1631609632258maxNavyBlueFloralRegularTop1.jpg",
+            name:"Max Girls Regular Top",
+            price: 499,
+            strikedoffprice: 1769,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/4/30/effb07bd-749a-45c0-93d6-41ef9ae51ef61619784198426-1.jpg",
+            name:"Stylo Bug Georgette Tiered Top",
+            price: 449,
+            strikedoffprice:1599,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14803432/2022/4/1/a7495c79-1c87-4591-a4dd-99798b9344131648794852288-YK-Boys-Navy-Blue-Light-Fade-Clean-Look-Stretchable-Joggers--1.jpg",
+            name:"YK Boys Strechable Joggers",
+            price: 639,
+            strikedoffprice:1999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17038870/2022/3/4/05d591b9-b201-4067-bd29-0c0a254d5e961646380101332-US-Polo-Assn-Kids-Boys-Jeans-5061646380100669-1.jpg",
+            name:"US Polo Assn. Boys Jeans",
+            price: 1699,
+            strikedoffprice:2869,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17137550/2022/2/11/b124b0f4-830d-44ed-a669-e8585d66cf4f1644579708683HellcatBoysRoundNeckBlendedCottonTshirt-ComboPackof51.jpg",
+            name:"HELLCAT Boys Pack of 5 Printed T-Shirt",
+            price:949,
+            strikedoffprice:4995,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17607444/2022/3/22/67fe62d7-5324-48da-b96e-76ef16c69cde1647945878876PrintedT-shirt1.jpg",
+            name:"H&M Boys Round Neck T-Shirt",
+            price: 399,
+            strikedoffprice:799,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17038574/2022/3/7/8e091a99-2866-458d-906a-4d7f728bd1861646659569790-US-Polo-Assn-Kids-Boys-Shirts-1031646659569553-1.jpg",
+            name:"US Polo Assn. Kids Boys Printed Cotton Shirt",
+            price: 1499,
+            strikedoffprice: 2589,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13529924/2021/7/1/929a7a5a-8524-4d18-913b-e875426709ff1625116631676NatileneGirlsMulticolouredRegularFitStripedCasualShirt1.jpg",
+            name:"Natilene Girls Regular Fit Casual Shirt",
+            price: 449,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14881430/2022/1/5/2ad439b0-0fd2-4511-a9a7-a1d068e2d79b1641373785437UTHbyRoadsterGirlsTealGreenSolidCasualShirt1.jpg",
+            name:"UTH By Roadster Girls Solid Casual Shirt",
+            price: 329,
+            strikedoffprice:1099,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14649700/2021/12/13/c526584f-91c1-4d1e-8ad9-4d30db90ad371639395067034-HRX-By-Hrithik-Roshan-U-17-Active-Girls-Jet-Black-Rapid-Dry--1.jpg",
+            name:"HRX By Hrithik Roshan Girls Active Tights",
+            price: 549,
+            strikedoffprice: 1699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17731472/2022/4/5/f38d191b-dc14-41b6-848a-7ba1611c855e1649130851625V-MartGirlsPackof2PrintedAnkle-LengthLeggings1.jpg",
+            name:"V-Mart Girls Printed Ankle Joggers",
+            price: 350,
+            strikedoffprice: 899,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15977346/2022/2/11/5c25a345-4fa2-4457-93fe-01fa1bd8054e1644573644509HouseofPataudiGirlsBlackWhiteFloralPrintedRegularRozanaKurta1.jpg",
+            name:"House of Pataudi Girls Printed Lehenga Choli",
+            price: 2399,
+            strikedoffprice:2999,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16963260/2022/1/28/7a826d95-831a-421d-8ba6-0c42ca761f2d1643370688803SKYHEIGHTSGirlsMaroon1.jpg",
+            name:"SKY Heights Ready to Wear Lehenga Blouse",
+            price: 1224,
+            strikedoffprice:3499,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/5500201/2018/4/24/11524569424344-na-5221524569424114-1.jpg",
+            name:"Kids Kent Sneakers",
+            price: 1889,
+            strikedoffprice:2699,
+        },
+        {
+            image_url:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14957770/2022/2/21/7619c336-c328-4ad5-9654-77509a5ad8501645420270505-Skechers-Girls-Blue-Twinkle-Sparks---Unicorn-Charme-Sneakers-1.jpg",
+            name:"Skechers Girls Twinkle Sparks",
+            price: 2999,
+            strikedoffprice: 8599,
+        },
+    ];
+
+    var cartData;
+    if(localStorage.getItem("cartData") ===null){
+        cartData=[];
+    }else{
+        cartData = JSON.parse(localStorage.getItem("cartData"));
+    }
+
+    kidsData.forEach(function(kidData){
+
+        var box =document.createElement("div");
+        box.setAttribute('class', 'box');
+
+        var img = document.createElement("img");
+        img.src = kidData.image_url;
+
+        var name = document.createElement("p");
+        name.innerText = kidData.name;
+
+        var price = document.createElement("p");
+        price.textContent = kidData.price;
+
+        var cartButton =document.createElement("button");
+        cartButton.textContent = "Add to Cart";
+
+        cartButton.addEventListener("click", function(){
+            cartData.push(kidData);
+            alert("Item  added Successfully")
+            localStorage.setItem("cartData", JSON.stringify(cartData));
+        });
+
+        box.append(img, name, price, cartButton);
+        document.querySelector("#container").append(box);
+    })
+</script>
+</html>

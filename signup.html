@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+        form{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 20px;
+            height: 20vh;
+            width: 20vw;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>SignUp</h1>
+    <form>
+        <input type="email" placeholder="Enter Email" id="email">
+        <input type="number" placeholder="Enter mobile number" id="mobile">
+        <input type="password" placeholder="Enter password" id="password">
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+<script>
+    document.querySelector("form").addEventListener("submit", signUpFn);
+    var usersData;
+
+    if(localStorage.getItem("usersData") ===null){
+        usersData =[]
+    }else{
+        usersData = JSON.parse(localStorage.getItem("usersData"))
+    }
+
+    function signUpFn(){
+        event.preventDefault();
+        var userObj = {
+            email: document.querySelector("#email").value,
+            number: document.querySelector("#mobile").value,
+            password: document.querySelector("#password").value
+        }
+        usersData.push(userObj);
+        localStorage.setItem("usersData", JSON.stringify(usersData))
+    }
+</script>
+</html>

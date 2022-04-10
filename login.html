@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            height: 15vh;
+            width: 15vw;
+            margin: auto;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form>
+        <input type="email" id="email" placeholder="Enter email">
+        <input type="password" id="password" placeholder="Enter password">
+        <input type="submit" value="Login">
+    </form>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit', loginFunc);
+
+var registeredUsers = JSON.parse(localStorage.getItem('UsersData'));
+function loginFunc() {
+    event.preventDefault();
+    
+    var enteredEmail = document.querySelector('#email').value;
+    var enteredPassword = document.querySelector('#password').value;
+
+    registeredUsers.forEach(userData => {
+        if(userData.email === enteredEmail && userData.password === enteredPassword) {
+            alert("LOGIN SUCCESS");
+            // window.location.href =  'mens.html';
+          
+        } else {
+            alert('Incorrect Details');
+        }
+    });
+
+}
+</script>
+</html>
